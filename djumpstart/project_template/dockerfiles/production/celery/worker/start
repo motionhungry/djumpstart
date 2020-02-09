@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+
+celery -A {{ project_name }}.taskapp worker -l INFO
