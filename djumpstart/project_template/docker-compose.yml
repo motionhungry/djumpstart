@@ -4,7 +4,7 @@ volumes:
   local_postgres_data: {}
 
 services:
-  django: &django
+  {{ project_name }}: &{{ project_name }}
     build:
       context: .
       dockerfile: dockerfiles/local/Dockerfile
@@ -37,7 +37,7 @@ services:
     image: redis:3.2
 
   celeryworker:
-    <<: *django
+    <<: *{{ project_name }}
     image: {{ project_name }}_local_celeryworker
     depends_on:
       - redis
@@ -47,7 +47,7 @@ services:
     command: /start-celeryworker
 
   celerybeat:
-    <<: *django
+    <<: *{{ project_name }}
     image: {{ project_name }}_local_celerybeat
     depends_on:
       - redis
@@ -57,14 +57,14 @@ services:
     command: /start-celerybeat
 
   flower:
-    <<: *django
+    <<: *{{ project_name }}
     image: {{ project_name }}_local_flower
     ports:
       - "5555:5555"
     command: /start-flower
 
-  admin:
-    <<: *django
+  {{ project_name }}_admin:
+    <<: *{{ project_name }}
     image: {{ project_name }}_local_admin
     depends_on:
       - postgres

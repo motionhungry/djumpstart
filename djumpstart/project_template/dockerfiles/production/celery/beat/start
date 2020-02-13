@@ -5,4 +5,4 @@ set -o pipefail
 set -o nounset
 
 
-celery -A {{ project_name }}.taskapp beat -l INFO
+celery -A {{ project_name }}.tasks beat -l INFO
