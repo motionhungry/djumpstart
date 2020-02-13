@@ -1,5 +1,7 @@
+from datetime import timedelta
+
 from config.settings.base import (
-    ROOT_DIR, INSTALLED_APPS,
+    ROOT_DIR, INSTALLED_APPS, TEMPLATES, USE_TZ,
 )
 
 APPS_DIR = ROOT_DIR.path('{{ project_name }}')

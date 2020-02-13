@@ -66,7 +66,3 @@ INSTALLED_APPS += ['django_extensions']  # noqa F405
 RELEASE_VERSION='0.0.0'
 RELEASE_ENVIRONMENT='local'
 RELEASE_COMMIT_SHA='unknown'
-
-# Simple JWT
-# ------------------------------------------------------------------------------
-SIMPLE_JWT['SIGNING_KEY'] = SECRET_KEY

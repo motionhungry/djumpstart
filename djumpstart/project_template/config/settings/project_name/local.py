@@ -6,3 +6,7 @@ from .base import *
 # ------------------------------------------------------------------------------
 CELERY_TASK_ALWAYS_EAGER = True
 CELERY_TASK_EAGER_PROPAGATES = True
+
+# Simple JWT
+# ------------------------------------------------------------------------------
+SIMPLE_JWT['SIGNING_KEY'] = SECRET_KEY
