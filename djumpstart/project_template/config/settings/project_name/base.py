@@ -1,7 +1,7 @@
 from datetime import timedelta
 
 from config.settings.base import (
-    ROOT_DIR, INSTALLED_APPS, TEMPLATES, USE_TZ, TIMEZONE, env,
+    ROOT_DIR, INSTALLED_APPS, TEMPLATES, USE_TZ, TIME_ZONE, env,
 )
 
 APPS_DIR = ROOT_DIR.path('{{ project_name }}')
@@ -9,9 +9,7 @@ TEMPLATES[0]['DIRS'] = [str(APPS_DIR.path('templates'))]
 
 ROOT_URLCONF = '{{ project_name }}.urls'
 
-INSTALLED_APPS += [
-    '{{ project_name }}.users.apps.UsersConfig',
-]
+INSTALLED_APPS += []
 
 # Django Rest Framework
 # ------------------------------------------------------------------------------

@@ -53,7 +53,9 @@ THIRD_PARTY_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'drf_yasg',
 ]
-LOCAL_APPS = []
+LOCAL_APPS = [
+    '{{ project_name }}.users.apps.UsersConfig',
+]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -69,7 +71,7 @@ MIGRATION_MODULES = {}
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
-AUTH_USER_MODEL = 'auth.User'
+AUTH_USER_MODEL = 'users.User'
 
 # PASSWORDS
 # ------------------------------------------------------------------------------
